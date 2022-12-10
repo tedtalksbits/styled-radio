@@ -29,6 +29,7 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont,
                 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
                 'Helvetica Neue', sans-serif;
+            background: #ecf2fe;
         }
         input[type='radio'].radio-input {
             position: absolute;
@@ -41,7 +42,7 @@
             justify-content: space-between;
             gap: 0.5rem;
             padding: 2rem;
-            border: 2px solid rgb(199, 199, 199);
+            border: 2px solid #e1e2e7;
             border-radius: 0.5rem;
             cursor: pointer;
         }
@@ -63,45 +64,61 @@
         .container {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
             max-width: 99ch;
             margin: 0 auto;
             justify-content: center;
             height: 100vh;
         }
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .card p {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
     </style>
     <body>
         <div class="container">
-            <label for="itemOne">
-                <input
-                    type="radio"
-                    id="itemOne"
-                    name="radios"
-                    value="itemOne"
-                    class="radio-input"
-                />
-                <div class="radio-content">Item One</div>
-            </label>
-            <label for="itemTwo">
-                <input
-                    type="radio"
-                    id="itemTwo"
-                    name="radios"
-                    value="itemTwo"
-                    class="radio-input"
-                />
-                <div class="radio-content">Item Two</div>
-            </label>
-            <label for="itemThree">
-                <input
-                    type="radio"
-                    id="itemThree"
-                    name="radios"
-                    value="itemThree"
-                    class="radio-input"
-                />
-                <div class="radio-content">Item Three</div>
-            </label>
+            <div class="card">
+                <p>Select an option</p>
+                <label for="itemOne">
+                    <input
+                        type="radio"
+                        id="itemOne"
+                        name="radios"
+                        value="itemOne"
+                        class="radio-input"
+                    />
+                    <div class="radio-content">Item One</div>
+                </label>
+                <label for="itemTwo">
+                    <input
+                        type="radio"
+                        id="itemTwo"
+                        name="radios"
+                        value="itemTwo"
+                        class="radio-input"
+                    />
+                    <div class="radio-content">Item Two</div>
+                </label>
+                <label for="itemThree">
+                    <input
+                        type="radio"
+                        id="itemThree"
+                        name="radios"
+                        value="itemThree"
+                        class="radio-input"
+                    />
+                    <div class="radio-content">Item Three</div>
+                </label>
+            </div>
         </div>
     </body>
 </html>
