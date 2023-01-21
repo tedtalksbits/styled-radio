@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Document</title>
+        <style>
+            input[type='checkbox'].menu-input {
+                position: absolute;
+                opacity: 0;
+                pointer-events: none;
+            }
+            input[type='checkbox'].menu-input + div.menu-content {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                visibility: hidden;
+                /* max-height: 0; */
+                padding: 0.5rem;
+                transition: all 0.3s ease-in-out;
+                position: absolute;
+                opacity: 0;
+                z-index: 1;
+            }
+            input[type='checkbox'].menu-input:checked + div.menu-content {
+                border-radius: 1rem;
+                box-shadow: 1px 1px 2px 1px #e1e2e7;
+                visibility: visible;
+                /* max-height: 100%; */
+                height: fit-content;
+                opacity: 1;
+                background-color: white;
+            }
+
+            label.menu {
+                cursor: pointer;
+                position: relative;
+                user-select: none;
+            }
+
+            input[type='text'].menu-input {
+                position: absolute;
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            input[type='text'].menu-input + div.menu-content {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                visibility: hidden;
+                padding: 1rem;
+                transition: all 0.3s ease-in-out;
+                position: absolute;
+                opacity: 0;
+                z-index: 1;
+                min-width: 200px;
+            }
+
+            input[type='text'].menu-input:focus + div.menu-content {
+                border-radius: 1rem;
+                box-shadow: 1px 1px 2px 1px #e1e2e7;
+                visibility: visible;
+                height: fit-content;
+                opacity: 1;
+                background-color: white;
+            }
+
+            /* menu-title */
+            span.menu-title {
+                font-weight: 400;
+                color: rgb(66, 66, 66);
+                transition: all 0.3s ease-in-out;
+            }
+            label.menu:has(input[type='text'].menu-input:focus)
+                span.menu-title {
+                color: rgb(0, 132, 255);
+                transition: all 0.3s ease-in-out;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <a href="index.html">back</a>
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 1rem">
+                    <label for="menuOne" class="menu">
+                        <span class="menu-title"> Menu One </span>
+                        <input
+                            type="text"
+                            id="menuOne"
+                            name="checkbox"
+                            value="menuOne"
+                            class="menu-input"
+                        />
+                        <div class="menu-content">
+                            <a href="">Item One</a>
+                            <a href="">Item Two</a>
+                            <a href="">Item Three</a>
+                        </div>
+                    </label>
+                    <label for="menuTwo" class="menu">
+                        <span class="menu-title"> Menu Two </span>
+                        <input
+                            type="text"
+                            id="menuTwo"
+                            name="checkbox"
+                            value="menuOne"
+                            class="menu-input"
+                        />
+                        <div class="menu-content">
+                            <a href="">Item One</a>
+                            <a href="">Item Two</a>
+                            <a href="">Item Three</a>
+                        </div>
+                    </label>
+                    <label for="menuThree" class="menu">
+                        <span class="menu-title"> Menu Three </span>
+                        <input
+                            type="text"
+                            id="menuThree"
+                            name="checkbox"
+                            value="menuOne"
+                            class="menu-input"
+                        />
+                        <div class="menu-content">
+                            <a href="">Item One</a>
+                            <a href="">Item Two</a>
+                            <a href="">Item Three</a>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
